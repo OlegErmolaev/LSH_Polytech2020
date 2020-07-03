@@ -19,55 +19,39 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticD
 from sklearn.linear_model import LogisticRegression
 
 
-#def walk(dir):
-#    for name in os.listdir(dir):
-#        path = os.path.join(dir, name)
-#        if os.path.isfile(path):
-#            tabl(path)
-#        else:
-#            walk(path)
-#
-#def tabl(path):
+def walk(dir):
+    for name in os.listdir(dir):
+        path = os.path.join(dir, name)
+        if os.path.isfile(path):
+            tabl(path)
+        else:
+            walk(path)
 
 
 
-#def write_on_file(path):
-#    f = open('path', 'r')
-#    for line in f:
-#        l = [line.strip()]
-#        l
-#    f.close()
+def tabl(path):
+    k = 0
+    ids = []
+    num_events = []
+    f = open(path, 'r')
+    temp_data = pd.DataFrame({
+    'date_1': [],
+    'time_1': [],
+    'id': [],
+    'is_online': [],
+    'date_2': [],
+    'time_2': []})
+    for line in f:
+        l = line.strip()
+        temp_data.iloc[k].df.date_1 = l[]
+        k=k+1
 
-path = 'D:\Test\users_data'
-#directory = input("Напиши директорию: ")
-#direct = walk(directory)
-ids = []
-num_events = []
-for dir, subdir, files in os.walk(path):
-    if len(dir.split('/')) > 1:
-        ids.append(dir.split('/')[-1])
-        num_events.append(len(files))
-
-
-users_data = pd.DataFrame(columns=['num_events'], index=ids)
-users_data.head()
-users_data['num_events'] = num_events
-users_data['online_freq'] = 0
-users_data['id'] = users_data.index
-users_data.describe()
+    f.close()
+    print(temp_data)
 
 
-online_freq_users = []
-for dir, subdir, files in os.walk(path):
-    if len(dir.split('\ '))>1:
-        id = (dir.split('/')[-1])
-        online_freq = []
-        for f in files:
-            temp_data = pd.read_table(dir+'/'+f, sep='|', names=
-                                      ['date_1', 'time_1', 'id', 'is_online', 'date_2', 'time_2'])
-            print(online_freq)
-            freq = sum(temp_data['is_online'])/len(temp_data['is_online'])
-            if freq.isna():
-                online_freq.append()
-                users_data.loc[users_data['id']==id, 'online_freq'] = sum(online_freq)
 
+s = '\ddd'
+s1 = s[0]
+directory = input("Напиши директорию: ")
+walk(directory)
