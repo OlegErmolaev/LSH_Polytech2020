@@ -30,28 +30,17 @@ def walk(dir):
 
 
 def tabl(path):
-    k = 0
-    ids = []
-    num_events = []
-    f = open(path, 'r')
-    temp_data = pd.DataFrame({
-    'date_1': [],
-    'time_1': [],
-    'id': [],
-    'is_online': [],
-    'date_2': [],
-    'time_2': []})
-    for line in f:
-        l = line.strip()
-        temp_data.iloc[k].df.date_1 = l[]
-        k=k+1
-
-    f.close()
-    print(temp_data)
+ids = []
+num_events = []
+for dir, subdir, files in os.walk('users_data_train'):
+    print(dir)
+    print(files)
+    if len(dir.split('/'))>1:
+        ids.append(int(dir.split('/')[-1]))
+        num_events.append(len(files))
 
 
 
-s = '\ddd'
-s1 = s[0]
+
 directory = input("Напиши директорию: ")
 walk(directory)
