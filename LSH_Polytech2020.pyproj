@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e9ecccb4-eb0a-424e-8b0c-8ef47c3d6af6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LSH_Polytech2020.py</StartupFile>
+    <StartupFile>LSH_Polytech2020_SCIkit.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LSH_Polytech2020.py" />
+    <Compile Include="LSH_Polytech2020_SCIkit.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
